@@ -1,0 +1,150 @@
+/* global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* default and fallback fonts */
+    font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("images/nba.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 2.0;
+    background-color: white;
+    padding: 20px;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: white;
+    box-shadow: 0 0 55px gold;
+}
+
+/* Form styles */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(108, 95, 18);
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(124, 107, 6);
+    border-radius: 4px;
+    font-size: 1.0em;
+}
+
+/* Fieldset styles */
+fieldset {
+    border: 1px solid rgb(124, 107, 6);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Radio and Checkbox styles */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#GOAT {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+}
+
+#GOAT > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#GOAT input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+#GOAT label {
+    margin: 0;
+    cursor: pointer;
+}
+
+button {
+    background-color: gold;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+button:hover {
+    background-color: rgb(181, 181, 242);
+}
+
+/* Error styling */
+.error {
+    color: #dc3545;
+    font-size: 1rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Error message visibility */
+.error.visible {
+    visibility: visible;
+}
+
+
+@media (max-width: 1000px) {
+    main {
+        padding: 15px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
