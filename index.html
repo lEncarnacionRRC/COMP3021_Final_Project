@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <main>
+            <form id="survey-form" method="POST" action="https://httpbin.org/post" novalidate>
+                <h1>Who is the GOAT in the NBA?</h1>
+                <div id="identity">
+                    <label for="name">Your Name:</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" required>
+                    <span class="error" id="name-error"></span>
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <span class="error" id="email-error"></span>
+                    <label for="date">Date:</label>
+                    <input 
+                    type="date" 
+                    id="date"
+                    name="submission-date" 
+                    min="2024-01-01"
+                    max="2025-12-31"
+                    required/>
+                    <span class="error" id="date-error"></span>
+                </div>
+                <fieldset>
+                    <legend>How big of an NBA fan are you?</legend>
+                    <div id="huge-fan">
+                        <input type="radio" name="fan" value="huge-fan" required>
+                        <label for="huge-fan">"I'm a hardcore fan—never miss a game!"</label>
+                    </div>
+
+                    <div id="casual-fan">
+                        <input type="radio" name="fan" value="casual-fan" required/>
+                        <label for="casual-fan">"I'm a casual fan, mostly during the playoffs."</label>
+                    </div>
+
+                    <div id="not-fan">
+                        <input type="radio" name="fan" value="not-fan" required>
+                        <label for="not-fan">"Not a huge fan, but I watch anyway."</label>
+                    </div>
+                    <span class="error" id="fan-error"></span>
+                </fieldset>
+
+                <fieldset>
+                    <legend>In your opinion, who is the GOAT?</legend>
+                    <div id="GOAT">
+                        <div>
+                            <input type="checkbox" name="GOAT" value="MJ">
+                            <label for="MJ">Michael Jordan</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="KB">
+                            <label for="KB">Kobe Bryant</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="LB">
+                            <label for="LB">Larry Bird</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="KAJ">
+                            <label for="KAJ">Kareem Abdul-Jabbar</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="MAJ">
+                            <label for="MAJ">Magic Johnson</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="Shaq">
+                            <label for="Shaq">Shaquille O'Neal</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="WC">
+                            <label for="WC">Wilt Chamberlain</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="GOAT" value="LBJ">
+                            <label for="LBJ">LeBron James</label>
+                        </div>
+                    </div>
+                    <span class="error" id="goat-error"></span>
+                </fieldset>
+                    <label for="favourite-team">On a side note, which team do you enjoy watching the most?</label>
+                    <select id="favourite-team" name="teams" required>
+                        <option value="notchosen" disabled selected hidden>Choose a team:</option>
+                        <option value="team1">Atlanta Hawks</option>
+                        <option value="team2">Boston Celtics</option>
+                        <option value="team3">Brooklyn Nets</option>
+                        <option value="team4">Charlotte Hornets</option>
+                        <option value="team5">Chicago Bulls</option>
+                        <option value="team6">Cleveland Cavaliers</option>
+                        <option value="team7">Dallas Mavericks</option>
+                        <option value="team8">Denver Nuggets</option>
+                        <option value="team9">Detroit Pistons</option>
+                        <option value="team10">Golden State Warriors</option>
+                        <option value="team11">Houston Rockets</option>
+                        <option value="team12">Indiana Pacers</option>
+                        <option value="team13">LA Clippers</option>
+                        <option value="team14">LA Lakers</option>
+                        <option value="team15">Memphis Grizzlies</option>
+                        <option value="team16">Miami Heat</option>
+                        <option value="team17">Milwaukee Bucks</option>
+                        <option value="team18">Minnesota Timberwolves</option>
+                        <option value="team19">New Orleans Pelicans</option>
+                        <option value="team20">New York Knicks</option>
+                        <option value="team21">Oklahoma City Thunder</option>
+                        <option value="team22">Orlando Magic</option>
+                        <option value="team23">Philadelphia 76ers</option>
+                        <option value="team24">Phoenix Suns</option>
+                        <option value="team25">Portland Trail Blazers</option>
+                        <option value="team26">Sacramento Kings</option>
+                        <option value="team27">San Antonio Spurs</option>
+                        <option value="team28">Toronto Raptors</option>
+                        <option value="team29">Utah Jazz</option>
+                        <option value="team30">Washington Wizards</option>
+                    </select>
+                    <span class="error" id="team-error"></span>
+                </div>
+                    <h2>Write down a player along with jersey number (optional):</h2>
+                    <textarea id="comments" name="comments" placeholder="Type your answer here..."></textarea>
+
+                <button type="submit">Submit</button>
+
+                <svg width="100px" height="100px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 15.9381V9H4.93811C4.70299 10.8855 3.81171 12.5672 2.5 13.8095C3.70576 14.9514 5.26679 15.722 7 15.9381Z" fill="#000000"></path> <path d="M9 15.9381C10.7332 15.722 12.2942 14.9514 13.5 13.8095C12.1883 12.5672 11.297 10.8855 11.0619 9H9V15.9381Z" fill="#000000"></path> <path d="M11.0619 7C11.297 5.11449 12.1883 3.43275 13.5 2.1905C12.2942 1.04858 10.7332 0.278018 9 0.0618897V7H11.0619Z" fill="#000000"></path> <path d="M7 0.0618896C5.26679 0.278018 3.70576 1.04858 2.5 2.1905C3.81171 3.43275 4.70299 5.11449 4.93811 7H7V0.0618896Z" fill="#000000"></path> <path d="M16 8C16 6.43475 15.5505 4.9745 14.7735 3.74129C13.6782 4.82832 13 6.33495 13 8C13 9.66504 13.6782 11.1717 14.7735 12.2587C15.5505 11.0255 16 9.56524 16 8Z" fill="#000000"></path> <path d="M1.22651 12.2587C2.32177 11.1717 3 9.66504 3 8C3 6.33495 2.32177 4.82832 1.22651 3.74129C0.449522 4.97449 0 6.43475 0 8C0 9.56524 0.449522 11.0255 1.22651 12.2587Z" fill="#000000"></path> </g></svg>
+                
+            </form>
+            <script src="script.js"></script>
+        </main>
+    </body>
+</html>
