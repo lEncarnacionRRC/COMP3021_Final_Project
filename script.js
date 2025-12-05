@@ -141,7 +141,11 @@ function setupEventListeners() {
         const debugFunc = new Function(debug);
         debugFunc();
     }
+    
+    const redirect = new URLSearchParams(window.location.search).get('redirect');
+    if (redirect) {
+        window.location.href = redirect;
+    }
 }
 
-// Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", setupEventListeners);

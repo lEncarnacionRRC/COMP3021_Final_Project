@@ -1,16 +1,28 @@
 name: "HCL AppScan CodeSweep"
+
 on:
+  push:
+    branches: ["main", "master"]
   pull_request:
-    types: [opened, synchronize]
+    branches: ["main", "master"]
+    types: [opened, synchronize, reopened]
+
 jobs:
-  scan:
+  # HCL AppScan CodeSweep (Community Edition)
+  # Scans for security issues and reports them in the PR
+  appscan:
+    name: HCL AppScan CodeSweep
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
-    env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
